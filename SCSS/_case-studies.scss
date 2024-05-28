@@ -1,0 +1,123 @@
+.case-studies{
+    margin-top: clamp(3.75rem, calc(1.921rem + 7.8vw), 8.75rem);
+    .case-studies-container{
+        @extend %container;
+        flex-direction: column;
+    }
+    .case-studies-header{
+        display: flex;
+        align-items: center;
+    }
+    .case-studies-title{
+        background-color: #B9FF66;
+        align-self: center;
+        border-radius: 7px;
+        max-width: 265px;
+        padding: 7px 5px;
+
+        h1{
+            @include text(clamp(2.25rem, calc(2.127rem + 0.48vw), 2.5rem),500);
+            line-height: unset;
+        }
+    }
+    .case-studies-subtitle{
+        margin-left: 40px;
+        padding-top: 5px;
+        @include text(clamp(1rem, calc(0.877rem + 0.48vw), 1.25rem),400);
+        max-width: 650px;
+    }
+    // .case-studies-block{
+    //     display: flex;
+    //     max-width: 1240px;
+    //     gap: 65px;
+    //     margin-top: 80px;
+    //     padding: 70px 50px;
+    //     background-color: #191A23;
+    //     border-radius: 45px;
+    //     @include text(clamp(1rem, calc(0.877rem + 0.48vw), 1.25rem),400);
+    //     color: #ffffff;
+    // }
+    // .case-studies-line{
+    //     width: 3px;
+
+    //     background-color: #fff;
+    // }
+    .tabs-container{
+        margin-top: 80px;
+    }
+    .content-box{
+        max-width: 1240px;
+        display: flex;
+        justify-content: center;
+        background-color: #191A23;
+        border-radius: 45px;
+
+        @include text(clamp(1rem, calc(0.877rem + 0.48vw), 1.25rem),400);
+        color: #ffffff;
+        padding: 70px 50px;
+    }
+    .content{
+        display: none;
+    }
+    .content.is-active{
+        display: block;
+    }
+    .tab-box{
+        display: flex;
+        justify-content: space-between;
+        padding-left: 50px;
+        padding-right: 50px;
+
+    }
+    .tab-btn{
+        background-color: #191A23;
+        border-top-left-radius: 14px;
+        border-top-right-radius: 14px;
+        height: 45px;
+        max-width: 120px;
+        flex-grow: 1;
+        opacity: 0.7;
+        cursor: pointer;
+    }
+    .tab-btn.is-active{
+        opacity: 1;
+    }
+    .case-studies-restaurant,.case-studies-software,.case-studies-retail{
+        max-width: 1120px;
+    }
+    .case-studies-learn-more{
+        display: flex;
+        gap: 13px;
+        margin-top: 40px;
+        color:#B9FF66;
+        img{
+            margin-top: 2px;
+        }
+    }
+    
+}
+@media (max-width:768px){
+    .case-studies{
+        .case-studies-header{
+            flex-direction: column;
+            .case-studies-subtitle{
+                margin-top: 30px;
+                text-align: center;
+                margin-left: 0px;
+            }
+        }
+    }
+
+}
+@media (max-width:576px){
+    .case-studies{
+        .tab-btn{
+            max-width: 80px;
+            height: 35px;
+        }
+        .content-box{
+            padding: 50px 30px;
+        }
+
+    }
+}

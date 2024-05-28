@@ -1,0 +1,117 @@
+.free-proposal{
+    .free-proposal-container{
+        @extend %container;
+        margin-top: clamp(4.375rem, calc(3.62rem + 3.22vw), 6.438rem);
+    }
+    .free-proposal-trans-block{
+        display: flex;
+        width: 100%;
+        // height: 394px;
+        position: relative;
+        z-index: 1;
+    }
+    .free-proposal-block{
+        background-color: #F3F3F3;
+        border-radius: 45px;
+        width: clamp(24.375rem, 100vw, 77.5rem);
+        // max-height: 347px;
+        padding: 60px 135px 60px 60px;
+        margin-top: 20px;
+    }
+    .free-proposal-inner{
+        max-width: 500px;
+    }
+    h1{
+        @include text(clamp(1.625rem, calc(1.51rem + 0.47vw), 1.875rem),500);
+    }
+    p{
+        @include text(clamp(1rem, calc(0.943rem + 0.24vw), 1.125rem),400);
+        margin-top: 26px;
+    }
+    button{
+        @include text(clamp(0.875rem, calc(0.703rem + 0.71vw), 1.25rem),400);
+        color: #fff;
+        background-color: #191A23;
+        padding: 20px 35px;
+        border-radius: 14px;
+        margin-top: 26px;
+    }
+    img{
+        max-width: 100%;
+        max-height: 100%;
+        position: absolute;
+        z-index: 999;
+        margin-left: 60%;
+        width: clamp(15.25rem, calc(4.051rem + 23.09vw), 22.813rem);
+        left: 50px;
+        bottom: 0px;
+        transform: translateY(clamp(-2.5rem, calc(-6.202rem + 7.63vw), 0rem));
+    }
+    .modal{
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: 99998;
+        background-color: rgba(0,0,0,.3);
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        overflow-y: auto;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity .4s, visibility .4s;
+    }
+    .modal-box{
+        position: relative;
+        max-width: 500px;
+        padding: 45px;
+        z-index: 1;
+        background-color: #F3F3F3;
+        border-radius: 20px;
+        margin: 30px 15px;
+        box-shadow: 0px 0px 17px -7px rgba(34, 60, 80, 0.2);
+        transform: scale(0);
+        transition: transform .8s;
+    }
+    .modal.open{
+        visibility: visible;
+        opacity: 1;
+    }
+    .modal.open .modal-box{
+        transform: scale(1);
+    }
+    .close-button{
+        border: none;
+        background-color: transparent;
+        padding: 5px;
+        position: absolute;
+        top: 0px;
+        right: 15px;
+
+    }
+    .close-cross:hover{
+        color:#B9FF66;
+    }
+    .close-cross{
+        color: #000000;
+        font-size: 30px;
+        transition: color .4s;
+        cursor: pointer;
+
+    }
+}
+
+@media (max-width : 768px){
+    .free-proposal{
+        img{
+            display: none;
+        }
+    }
+    .free-proposal{
+        .free-proposal-block{
+            padding: 60px;
+        }
+    }
+}

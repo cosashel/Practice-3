@@ -1,0 +1,59 @@
+@import url(https://fonts.googleapis.com/css?family=Space+Grotesk:300,regular,500,600,700);
+
+
+body{
+    box-sizing: border-box;
+    position: relative;
+    overflow-y: visible;
+}
+
+%container{
+    max-width: 1260px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin text($size,$weight){
+    font-family: "Space Grotesk";
+    font-size: $size;
+    font-weight: $weight;
+    line-height: 25px;
+}
+
+%black-button{
+    max-width: 264px;
+    max-height: 68px;
+    background-color: #191A23;
+}
+%grid-item{
+    display: flex;
+    max-width: 600px;
+    max-height: 310px;
+    border-radius: 45px;
+    border: 1px solid #191A23;
+    box-shadow: 0px 5px #191A23;
+    padding: clamp(1.25rem, calc(-4.044rem + 8.82vw), 3.125rem);
+}
+%circle-button{
+    border-radius: 100%;
+    background-color: #191A23;
+    height: 41px;
+    width: 41px;
+}
+@mixin back-in($color){
+    background-color: $color;
+    max-height: 38px;
+    max-width: 221px;
+    flex-grow: 1;
+    border-radius: 7px;
+}
+@media (max-width : 768px){
+    %grid-item{
+        max-width: 100%;
+        padding: 50px;
+    }
+}
+
